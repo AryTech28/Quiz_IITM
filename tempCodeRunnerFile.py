@@ -33,7 +33,6 @@ def update_db_schema():
         cursor.execute("SELECT description FROM subjects LIMIT 1")
     except sqlite3.OperationalError:
         cursor.execute("ALTER TABLE subjects ADD COLUMN description TEXT DEFAULT ''")
-        pass
 
     try:
         cursor.execute("SELECT description FROM chapters LIMIT 1")
